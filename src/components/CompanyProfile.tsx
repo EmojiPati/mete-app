@@ -1,42 +1,12 @@
+"use client";
+
+import { useTranslation } from "@/i18n/LanguageProvider";
 import ScrollReveal from "./ScrollReveal";
 import SectionDivider from "./SectionDivider";
 
-const companyInfo: {
-  label: string;
-  value: string | null;
-  list?: string[];
-}[] = [
-  {
-    label: "Company Name",
-    value: "Bughra LLC (\u30DC\u30B0\u30E9\u5408\u540C\u4F1A\u793E)",
-  },
-  {
-    label: "Established",
-    value: "October 19, 2023",
-  },
-  {
-    label: "Location",
-    value: "3-4-43 Shinsuna, Koto-ku, Tokyo, 136-0075, Japan",
-  },
-  {
-    label: "Representative",
-    value: "Hidetoshi Imamura",
-  },
-  {
-    label: "Business Activities",
-    value: null,
-    list: [
-      "Health support business",
-      "Sale of quasi-drugs and related products",
-      "E-commerce business",
-      "OEM product planning and sales",
-      "Translation and interpretation services",
-      "Information provision services",
-    ],
-  },
-];
-
 export default function CompanyProfile() {
+  const { t } = useTranslation();
+
   return (
     <section id="about" className="bg-cream py-24 md:py-32">
       <div className="mx-auto max-w-4xl px-6 lg:px-8">
@@ -44,13 +14,11 @@ export default function CompanyProfile() {
           <div className="mb-16 text-center">
             <SectionDivider />
             <h2 className="mt-8 mb-8 font-heading text-4xl text-primary md:text-5xl">
-              Company Profile
+              {t.companyProfile.title}
             </h2>
             <div className="mx-auto max-w-2xl">
               <p className="font-heading text-lg italic leading-[1.9] text-foreground/70 md:text-xl">
-                &ldquo;To realize a healthy and prosperous society, we provide
-                value tailored to each individual through trusted products and
-                expert support.&rdquo;
+                &ldquo;{t.companyProfile.quote}&rdquo;
               </p>
             </div>
           </div>
@@ -58,11 +26,11 @@ export default function CompanyProfile() {
 
         <ScrollReveal delay={100}>
           <div className="overflow-hidden rounded-2xl border border-primary/[0.06] bg-white">
-            {companyInfo.map((item, index) => (
+            {t.companyProfile.info.map((item, index) => (
               <div
                 key={item.label}
                 className={`flex flex-col md:flex-row ${
-                  index < companyInfo.length - 1
+                  index < t.companyProfile.info.length - 1
                     ? "border-b border-primary/[0.06]"
                     : ""
                 }`}

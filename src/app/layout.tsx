@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { DM_Serif_Display, Outfit } from "next/font/google";
+import { LanguageProvider } from "@/i18n/LanguageProvider";
 import "./globals.css";
 
 const dmSerifDisplay = DM_Serif_Display({
@@ -35,11 +36,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="ja">
       <body
         className={`${dmSerifDisplay.variable} ${outfit.variable} font-sans antialiased`}
       >
-        {children}
+        <LanguageProvider>{children}</LanguageProvider>
       </body>
     </html>
   );

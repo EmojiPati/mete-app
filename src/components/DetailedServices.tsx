@@ -1,84 +1,16 @@
 "use client";
 
 import { useState } from "react";
+import { useTranslation } from "@/i18n/LanguageProvider";
+import type { ServiceDetailItem } from "@/i18n/types";
 import ScrollReveal from "./ScrollReveal";
 import SectionDivider from "./SectionDivider";
-
-interface ServiceDetail {
-  title: string;
-  paragraphs: string[];
-  disclaimer?: string;
-  listTitle?: string;
-  listItems?: string[];
-}
-
-const serviceDetails: ServiceDetail[] = [
-  {
-    title: "Health Management Support Business",
-    paragraphs: [
-      "We support the realization of a healthy life by providing general health information and lifestyle advice aimed at maintaining health in daily life. This service focuses on providing information tailored to individual lifestyles.",
-    ],
-  },
-  {
-    title: "Health Consultation & Preventive Support (Non-Medical)",
-    paragraphs: [
-      "We provide general information and consultation useful for maintaining health and improving preventive awareness from the perspectives of lifestyle habits, nutrition, exercise, and stress management.",
-    ],
-    disclaimer:
-      "\u203BThis service does not include medical acts (diagnosis, treatment, etc.). For detailed medical consultations, please visit a medical institution.",
-  },
-  {
-    title: "Sale of Quasi-drugs & Health-Related Products",
-    paragraphs: [
-      "We sell products focused on safety and quality, primarily quasi-drugs and health-related items. We carefully select products that assist in health maintenance and daily self-care.",
-    ],
-    listTitle: "Product Categories",
-    listItems: [
-      "Skincare products",
-      "Healthcare products",
-      "Health supplement-related products",
-    ],
-  },
-  {
-    title: "Translation & Interpretation Services (Medical & Health Screening)",
-    paragraphs: [
-      "We provide multilingual translation and interpretation to support smooth communication regarding medical care, checkups, and daily life for international clients.",
-    ],
-    listTitle: "Key Services",
-    listItems: [
-      "On-site interpretation for health checkups and hospital visits",
-      "Translation of medical documents and health records",
-      "Various interpretation and translation support for daily life",
-    ],
-  },
-  {
-    title: "Medical Tourism Planning, Operation & Sightseeing Information",
-    paragraphs: [
-      "We provide comprehensive support for overseas clients who wish to undergo health screenings and medical services in Japan. We plan and operate tours that combine medical care with sightseeing so that clients can have a safe and fulfilling experience.",
-      "We also provide tourism information, lifestyle tips, and local guides for visitors staying in Japan, ensuring a comfortable stay.",
-    ],
-    disclaimer:
-      "\u203BRegarding Travel Agency Business: Our company does not hold a travel agency license. Tour planning and arrangements are carried out through partner travel agencies, and our company acts as an intermediary or provides support.",
-  },
-  {
-    title: "E-commerce Business",
-    paragraphs: [
-      "We operate online product sales and information services, providing convenient digital services for both domestic and international customers.",
-    ],
-  },
-  {
-    title: "OEM, Product Planning & Sales Business",
-    paragraphs: [
-      "We support new business development and brand building through OEM product manufacturing, original product planning, and private brand development.",
-    ],
-  },
-];
 
 function AccordionItem({
   detail,
   index,
 }: {
-  detail: ServiceDetail;
+  detail: ServiceDetailItem;
   index: number;
 }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -157,19 +89,21 @@ function AccordionItem({
 }
 
 export default function DetailedServices() {
+  const { t } = useTranslation();
+
   return (
     <section className="bg-white py-24 md:py-32">
       <div className="mx-auto max-w-4xl px-6 lg:px-8">
         <ScrollReveal>
           <SectionDivider />
           <h2 className="mt-8 mb-12 text-center font-heading text-3xl text-primary md:text-4xl">
-            Service Details
+            {t.serviceDetails.title}
           </h2>
         </ScrollReveal>
 
         <ScrollReveal delay={100}>
           <div className="border-t border-primary/[0.08]">
-            {serviceDetails.map((detail, index) => (
+            {t.serviceDetails.items.map((detail, index) => (
               <AccordionItem key={detail.title} detail={detail} index={index} />
             ))}
           </div>

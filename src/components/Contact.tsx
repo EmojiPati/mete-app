@@ -1,10 +1,13 @@
 "use client";
 
 import Image from "next/image";
+import { useTranslation } from "@/i18n/LanguageProvider";
 import ScrollReveal from "./ScrollReveal";
 import SectionDivider from "./SectionDivider";
 
 export default function Contact() {
+  const { t } = useTranslation();
+
   return (
     <section id="contact" className="bg-white py-24 md:py-32">
       <div className="mx-auto max-w-4xl px-6 lg:px-8">
@@ -12,12 +15,10 @@ export default function Contact() {
           <div className="mb-16 text-center">
             <SectionDivider />
             <h2 className="mt-8 mb-4 font-heading text-4xl text-primary md:text-5xl">
-              Get in Touch
+              {t.contact.title}
             </h2>
             <p className="mx-auto mb-4 max-w-2xl text-lg text-text-secondary">
-              Please feel free to contact us for health consultations, product
-              inquiries, translation/interpretation requests, or OEM
-              consultations.
+              {t.contact.description}
             </p>
             <div className="flex flex-col items-center gap-6 sm:flex-row sm:justify-center">
               <a
@@ -73,14 +74,14 @@ export default function Contact() {
                     strokeLinecap="round"
                   />
                 </svg>
-                LINE
+                {t.contact.lineLabel}
               </div>
             </div>
             <div className="mt-6 flex justify-center">
               <div className="overflow-hidden rounded-xl border border-primary/10 bg-white p-2 shadow-sm">
                 <Image
                   src="/qr.webp"
-                  alt="LINE QR Code — Scan to connect with Bughra LLC on LINE"
+                  alt={t.contact.lineQrAlt}
                   width={160}
                   height={160}
                   className="rounded-lg"
@@ -101,12 +102,12 @@ export default function Contact() {
                   htmlFor="contact-name"
                   className="mb-2 block text-sm font-semibold text-primary"
                 >
-                  Name
+                  {t.contact.form.name}
                 </label>
                 <input
                   id="contact-name"
                   type="text"
-                  placeholder="Your name"
+                  placeholder={t.contact.form.namePlaceholder}
                   className="w-full rounded-xl border border-primary/10 bg-white px-4 py-3 text-foreground transition-all placeholder:text-text-secondary/40 focus:border-primary/30 focus:outline-none focus:ring-2 focus:ring-primary/20"
                 />
               </div>
@@ -115,12 +116,12 @@ export default function Contact() {
                   htmlFor="contact-email"
                   className="mb-2 block text-sm font-semibold text-primary"
                 >
-                  Email
+                  {t.contact.form.email}
                 </label>
                 <input
                   id="contact-email"
                   type="email"
-                  placeholder="your@email.com"
+                  placeholder={t.contact.form.emailPlaceholder}
                   className="w-full rounded-xl border border-primary/10 bg-white px-4 py-3 text-foreground transition-all placeholder:text-text-secondary/40 focus:border-primary/30 focus:outline-none focus:ring-2 focus:ring-primary/20"
                 />
               </div>
@@ -130,12 +131,12 @@ export default function Contact() {
                 htmlFor="contact-subject"
                 className="mb-2 block text-sm font-semibold text-primary"
               >
-                Subject
+                {t.contact.form.subject}
               </label>
               <input
                 id="contact-subject"
                 type="text"
-                placeholder="Subject of your inquiry"
+                placeholder={t.contact.form.subjectPlaceholder}
                 className="w-full rounded-xl border border-primary/10 bg-white px-4 py-3 text-foreground transition-all placeholder:text-text-secondary/40 focus:border-primary/30 focus:outline-none focus:ring-2 focus:ring-primary/20"
               />
             </div>
@@ -144,12 +145,12 @@ export default function Contact() {
                 htmlFor="contact-message"
                 className="mb-2 block text-sm font-semibold text-primary"
               >
-                Message
+                {t.contact.form.message}
               </label>
               <textarea
                 id="contact-message"
                 rows={5}
-                placeholder="How can we help you?"
+                placeholder={t.contact.form.messagePlaceholder}
                 className="w-full resize-none rounded-xl border border-primary/10 bg-white px-4 py-3 text-foreground transition-all placeholder:text-text-secondary/40 focus:border-primary/30 focus:outline-none focus:ring-2 focus:ring-primary/20"
               />
             </div>
@@ -157,7 +158,7 @@ export default function Contact() {
               type="submit"
               className="btn-primary w-full rounded-full bg-primary px-10 py-4 text-sm font-semibold tracking-wide text-white md:w-auto"
             >
-              Send Message
+              {t.contact.form.submit}
             </button>
           </form>
         </ScrollReveal>

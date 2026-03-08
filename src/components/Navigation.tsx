@@ -1,18 +1,21 @@
 "use client";
 
 import { useEffect, useState } from "react";
-
-const navLinks = [
-  { href: "#home", label: "Home" },
-  { href: "#services", label: "Services" },
-  { href: "#about", label: "About" },
-  { href: "#blog", label: "Blog" },
-  { href: "#contact", label: "Contact" },
-];
+import { useTranslation } from "@/i18n/LanguageProvider";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 export default function Navigation() {
+  const { t } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+
+  const navLinks = [
+    { href: "#home", label: t.nav.home },
+    { href: "#services", label: t.nav.services },
+    { href: "#about", label: t.nav.about },
+    { href: "#blog", label: t.nav.blog },
+    { href: "#contact", label: t.nav.contact },
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -50,31 +53,35 @@ export default function Navigation() {
                 {link.label}
               </a>
             ))}
+            <LanguageSwitcher />
           </div>
 
-          <button
-            type="button"
-            onClick={() => setIsOpen(!isOpen)}
-            className="relative flex h-8 w-8 items-center justify-center md:hidden"
-            aria-label="Toggle menu"
-            aria-expanded={isOpen}
-          >
-            <span
-              className={`absolute block h-[1.5px] w-5 bg-primary transition-all duration-300 ${
-                isOpen ? "rotate-45" : "-translate-y-1.5"
-              }`}
-            />
-            <span
-              className={`absolute block h-[1.5px] w-5 bg-primary transition-all duration-300 ${
-                isOpen ? "opacity-0" : ""
-              }`}
-            />
-            <span
-              className={`absolute block h-[1.5px] w-5 bg-primary transition-all duration-300 ${
-                isOpen ? "-rotate-45" : "translate-y-1.5"
-              }`}
-            />
-          </button>
+          <div className="flex items-center gap-4 md:hidden">
+            <LanguageSwitcher />
+            <button
+              type="button"
+              onClick={() => setIsOpen(!isOpen)}
+              className="relative flex h-8 w-8 items-center justify-center"
+              aria-label="Toggle menu"
+              aria-expanded={isOpen}
+            >
+              <span
+                className={`absolute block h-[1.5px] w-5 bg-primary transition-all duration-300 ${
+                  isOpen ? "rotate-45" : "-translate-y-1.5"
+                }`}
+              />
+              <span
+                className={`absolute block h-[1.5px] w-5 bg-primary transition-all duration-300 ${
+                  isOpen ? "opacity-0" : ""
+                }`}
+              />
+              <span
+                className={`absolute block h-[1.5px] w-5 bg-primary transition-all duration-300 ${
+                  isOpen ? "-rotate-45" : "translate-y-1.5"
+                }`}
+              />
+            </button>
+          </div>
         </div>
 
         <div
