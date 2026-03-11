@@ -21,7 +21,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 gap-12 md:grid-cols-3">
           <div>
             <h3 className="mb-4 font-heading text-2xl text-white">
-              Bughra
+              Bogura
               <span className="ml-1.5 text-accent">LLC</span>
             </h3>
             <p className="text-sm leading-relaxed text-white/50">

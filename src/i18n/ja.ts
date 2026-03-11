@@ -134,7 +134,7 @@ export const ja: Translations = {
     info: [
       {
         label: "会社名",
-        value: "ボグラ合同会社（Bughra LLC）",
+        value: "ボグラ合同会社（Bogura LLC）",
       },
       {
         label: "設立",
@@ -289,6 +289,6 @@ export const ja: Translations = {
           "本サイトの情報は一般的な情報提供を目的としたものであり、医療行為、診断、治療を目的としたものではございません。",
       },
     ],
-    copyright: "© 2026 Bughra LLC. All rights reserved.",
+    copyright: "© 2026 Bogura LLC. All rights reserved.",
   },
 };

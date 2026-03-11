@@ -17,7 +17,7 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: "Bughra LLC — Health Support & Services",
+  title: "Bogura LLC — Health Support & Services",
   description:
     "A comprehensive support company providing health management support, quasi-drug sales, translation/interpretation, E-commerce, and medical tourism services in Japan.",
   keywords: [
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     "translation services",
     "quasi-drugs",
     "health products",
-    "Bughra LLC",
+    "Bogura LLC",
   ],
 };
 

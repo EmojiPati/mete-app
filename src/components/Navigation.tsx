@@ -39,7 +39,7 @@ export default function Navigation() {
             href="#home"
             className="font-heading text-2xl tracking-tight text-primary"
           >
-            Bughra
+            Bogura
             <span className="ml-1.5 font-heading text-lg text-accent">LLC</span>
           </a>
 

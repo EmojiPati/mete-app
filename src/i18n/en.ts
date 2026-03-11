@@ -19,7 +19,7 @@ export const en: Translations = {
     contactBtn: "Contact Us",
   },
   companyIntro: {
-    p1: "Bughra LLC is a comprehensive service provider involved in health management support, the sale of quasi-drugs and health-related products, translation/interpretation services, E-commerce, and OEM product planning, as well as the planning and operation of medical tourism.",
+    p1: "Bogura LLC is a comprehensive service provider involved in health management support, the sale of quasi-drugs and health-related products, translation/interpretation services, E-commerce, and OEM product planning, as well as the planning and operation of medical tourism.",
     p2: "With a support system that leverages our expertise and multilingual capabilities for both domestic and international clients, we provide reliable services ranging from health and medical support to sightseeing information. For international visitors, we offer total support tailored to diverse needs, including interpretation for medical checkups and hospital visits, translation of medical documents, and lifestyle/tourism information during their stay.",
     disclaimer:
       "Please note: We are not a medical institution and do not perform medical acts (diagnosis, treatment, etc.).",
@@ -138,7 +138,7 @@ export const en: Translations = {
     info: [
       {
         label: "Company Name",
-        value: "Bughra LLC (\u30DC\u30B0\u30E9\u5408\u540C\u4F1A\u793E)",
+        value: "Bogura LLC (\u30DC\u30B0\u30E9\u5408\u540C\u4F1A\u793E)",
       },
       {
         label: "Established",
@@ -198,7 +198,7 @@ export const en: Translations = {
     description:
       "Please feel free to contact us for health consultations, product inquiries, translation/interpretation requests, or OEM consultations.",
     lineLabel: "LINE",
-    lineQrAlt: "LINE QR Code \u2014 Scan to connect with Bughra LLC on LINE",
+    lineQrAlt: "LINE QR Code \u2014 Scan to connect with Bogura LLC on LINE",
     form: {
       name: "Name",
       email: "Email",
@@ -221,7 +221,7 @@ export const en: Translations = {
     legalTitle:
       "Notation Based on the Act on Specified Commercial Transactions",
     legal: [
-      { label: "Seller", value: "Bughra LLC" },
+      { label: "Seller", value: "Bogura LLC" },
       { label: "Operations Representative", value: "Hidetoshi Imamura" },
       {
         label: "Address",
@@ -287,6 +287,6 @@ export const en: Translations = {
           "The information on this site is for general informational purposes only and is not intended for medical acts, diagnosis, or treatment.",
       },
     ],
-    copyright: "\u00A9 2026 Bughra LLC. All rights reserved.",
+    copyright: "\u00A9 2026 Bogura LLC. All rights reserved.",
   },
 };
